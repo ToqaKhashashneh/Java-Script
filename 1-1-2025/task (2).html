@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task (2)</title>
+</head>
+<style>
+div {
+    border: 2px solid black;
+    width: 52vw;
+    height: 11vw;
+    margin-top: 2vw;
+}
+
+#FontFamily{ 
+    margin-left: 0.5vw;
+    margin-top: 0.5vw;
+    
+}
+
+
+
+#FontSize{ 
+    margin-left: 0.5vw;
+    margin-top: 0.5vw;
+    
+}
+
+</style>
+
+<body>
+    <form>
+        <select id ="ChangeFontFamily" onchange="changeFontFamily();">
+            <option id= "TimesNewRoman" value="TimesNewRoman">Times New Roman </option>
+            <option  id= "Fantasy" value="Fantasy">Fantasy </option>
+            <option value="serif">Serif </option>
+        </select>
+
+        <select id="ChangeFontSize">
+            <option value="10px">10px</option>
+            <option value="15px">15px</option>
+            <option value="20px">20px</option>
+
+        </select>
+
+        <input id="italic" type="checkbox" value="italic" onclick="Italic();">
+        <label for = "italic" > Italic</label>
+
+        
+        <input id="bold" type="checkbox" value="bold"  onclick="Bold();">
+        <label for = "bold" > Bold</label>
+
+        <input id="underline" type="checkbox" value="underline"onclick="Underline();">
+        <label for = "underline" > Underline</label>
+    </form>
+
+
+    <div>
+        <p id = "paragraph" > the quick brown fox over the lazy dog</p>
+    </div>
+
+
+    <script>
+        // let TimesNewRoman =  document.getElementById("TimesNewRoman")
+
+        // TimesNewRoman.onclick = function () {
+        //     document.body.div.p.style.fontFamily="Times New Roman"
+        // }
+
+        // let paragraph =  document.getElementsByTagName("p")
+
+        // Fantasy.onclick = function () {
+        //     Fantasy.style.fontFamily="Fantasy"
+        // }
+
+
+//         let Fantasy =  document.getElementById("Fantasy")
+
+//         Fantasy.onclick = function () {
+//             document.getElementById("paraghraph").style.fontFamily = "fantasy";
+// }
+
+
+
+
+function changeFontFamily() {
+    const datalist = document.getElementById("ChangeFontFamily");
+    const fontFamily = datalist.value; 
+    document.getElementById("paragraph").style.fontFamily = fontFamily;
+}
+
+function changeFontSize() {
+            const datalist = document.getElementById("ChangeFontSize");
+            const fontSize = datalist.value; 
+            document.getElementById("paragraph").style.fontSize = fontSize;
+        }
+
+        function Italic() {
+            const checkbox = document.getElementById("italic");
+            const paragraph = document.getElementById("paragraph");
+            if (checkbox.checked) {
+                paragraph.style.fontStyle = "italic";
+            } else {
+                paragraph.style.fontStyle = "normal";
+            }
+        }
+
+        function Bold() {
+            const checkbox = document.getElementById("bold");
+            const paragraph = document.getElementById("paragraph");
+            if (checkbox.checked) {
+                paragraph.style.fontWeight = "bold";
+            } else {
+                paragraph.style.fontWeight = "normal";
+            }
+        }
+
+        function Underline() {
+            const checkbox = document.getElementById("underline");
+            const paragraph = document.getElementById("paragraph");
+            if (checkbox.checked) {
+                paragraph.style.textDecoration = "underline";
+            } else {
+                paragraph.style.textDecoration = "none";
+            }
+        }
+
+
+    </script>
+</body>
+</html>
