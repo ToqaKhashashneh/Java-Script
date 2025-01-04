@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 1
+    Write a function named tellFortune that:
+    takes 4 arguments: number of children,
+    partner's name, geographic location, job title.
+    outputs your fortune to the screen like so:
+    "You will be a X in Y, and married to Z with N kids."
+
+    Ex: tellFortune('software engineer', 'Jordan', 'Alice', 3);
+    => "You will be a software engineer in Jordan, and married to Alice with 3 kids." -->
+
+
+
+    <script>
+        function tellFortune(NumOfChildren, PartnerName, GeographicLocation, JobTitle) {
+
+            document.write("Task (1): <br> <br>")
+            document.write("You will be a  " + JobTitle + "  in  "
+                + GeographicLocation + ", " + "and married to  " + PartnerName
+                + " with " + NumOfChildren + " kids. <br> <br>")
+
+        }
+
+        tellFortune(8, "Khawla", "Jordan", "Buisnessman")
+
+
+
+        /*
+    2
+    Write a function named calculateDogAge that:
+    takes 1 argument: your puppy's age.
+    calculates your dog's age based on the conversion
+    rate of 1 human year to 7 dog years.
+    outputs the result to the screen like so:
+    "Your doggie is NN years old in dog years!"
+    
+    Ex: calculateDogAge(1);
+    => "Your doggie is 7 years old in dog years!"
+    */
+
+        function calculateDogAge(puppyAge) {
+            let doggieYear = 7 * puppyAge
+            document.write("Task (2): <br> <br>")
+            document.write("Your doggie is " + "(" + doggieYear + ")" + " years old in dog years! <br> <br>");
+        }
+        calculateDogAge(1);
+
+
+        3
+    // Write a function named calculateSupply that:
+    // takes 2 arguments: age, amount per day.
+    // calculates the amount consumed for rest of the life(based on a constant max age 100).
+    // outputs the result to the screen like so:
+    //         "You will need NN to last you until the ripe old age of X"
+
+    //         Ex: calculateSupply(30, 3);
+    // => 'You will need 76650 cups of tea to last you until the ripe old age of 100;
+
+        function calculateSupply (age , amountPerDay) {
+            let numberOfSupply = amountPerDay * (100-age) *365
+            document.write("Task (3): <br> <br>")
+            document.write ("You will need " + numberOfSupply + "  cups of tea to last you until the ripe old age of 100 <br> <br>")
+        }
+
+        calculateSupply(25,2)
+
+
+
+            
+    /*
+    4
+    Write a function called greet that:
+    takes 1 argument: name.
+    and it will return hello + name
+
+    Ex: greet("Adam")
+    => "Hello Adam"
+
+    */
+
+        function greet (name){
+            document.write("Task (4): <br> <br>")
+            document.write("Hello " + name + "<br> <br>" )
+
+        }
+        greet ("Adam")
+
+
+            /*
+    5
+    what is the error:
+    function double(cat) {
+    return 2 * x;
+    }
+     Error is : x is not defined
+
+    function double(7) {
+    return 2 * 7;
+    }
+     Error is : the parameter must be variable not constant
+
+    function double('7') {
+    return 2 * 'x';
+    }
+     Error is : the parameter is string, it's not a variable and x is not defined
+
+    */
+
+    
+    
+    // 6
+    // fix these functions:
+    // func double1(x {
+    // return 2 * x ;
+    // }
+
+        function double1 (x) {
+            return 2* x ;
+        }
+        
+
+
+    // functiondouble2 x)
+    // return 2 * x;
+    // }
+
+        function double2 (x) {
+            return 2 * x;
+        }
+
+    // function (x) double3 {
+    // return 2 * x;
+
+        function double3 (x) {
+            return 2 *x
+        }
+
+            /*
+    7
+    Write a function called cube that:
+    accept 1 parameter and calculate the cube of this number
+
+    Ex: cube(4)
+    => 64
+    */
+
+        function cube (number) {
+            let cubeOfNumber = number * number * number ;
+            document.write("Task (7): <br> <br>")
+            document.write ("The Cube of " + number + " is : " + cubeOfNumber + "<br> <br>")
+        }
+
+        cube (4);
+    
+
+        /*
+    8
+    Write a function called multiply that:
+    accept 2 parameters and calculate the multiply of these 2 numbers
+
+    Ex: multiply(3,4)
+    => 12
+    Ex: multiply(5,4)
+    => 20
+*/
+
+        function multiply (num1 , num2) {
+            let mult = num1 * num2 ;
+            document.write("Task (8): <br> <br>")
+            document.write("The multiplication of " + num1 + " and " + num2 + " is : " + mult + "<br> <br>"  )
+        }
+          
+        multiply (3,4)
+        /*
+    9
+    Write a function called canIGetADrivingLicense that:
+    accept 1 parameter represent the age
+    and if the age greater than or equal to 20 return "yes you can"
+    otherwise return "please come back after X years to get one"
+
+    Ex: canIGetADrivingLicense(21)
+    => "yes you can"
+
+    Ex: canIGetADrivingLicense(17)
+    => "please come back after 3 years to get one"
+
+    Ex: canIGetADrivingLicense(20)
+    => "yes you can"
+
+*/
+        function canIGetADrivingLicense (age) {
+            document.write ("Task (9) : <br> <br>")
+            if (age >= 20) 
+            document.write("Yes You Can!")
+            else {
+            let yearsRemaining = 20 - age;
+            document.write("Please come back after " +  yearsRemaining + " years to get one. <br> <br>") }
+
+        }
+        canIGetADrivingLicense (12)
+
+            /*
+    10
+    Write a function called sameLength
+    that accepts two strings as arguments,
+    and returns true if those strings have the same length, and false otherwise.
+
+    **hint: how we can know string length   Ex: : "tree".length   => 4
+
+    Ex: sameLength("tree","clue")
+    => true
+
+    Ex: sameLength("tree","car")
+    => false
+    */
+
+        function sameLength (word1 , word2){
+            if (word1.length == word2.length){
+            document.write("Task (10)  <br> <br>")
+            document.write("True <br> <br>")
+             }
+            else 
+            document.write("False <br> <br>")
+        }
+
+        sameLength("Bag" , "Car")
+
+    
+    //         11
+    // Write a function called largerNubmer
+    // that accept two numbers as arguments,
+    // and return the larger numbers
+
+    // Ex: largerNubmer(5,6)
+    // => 6
+
+    // Ex: largerNubmer(5,3)
+    // => 5
+
+        function largerNubmer (num1 , num2) {
+            document.write("Task (11) : <br> <br>")
+            if (num1 > num2)
+            document.write("Between " + num1 + " and " + num2 + "<br>" +num1 + " is larger <br> <br>")
+            else 
+            document.write("Between " + num1 + "and " + num2 + "<br>" +num2 + " is larger <br> <br>")
+            
+        }
+
+        largerNubmer(16,10)
+
+
+        /*
+    12
+    Write a function called smallerNubmer
+    that accept three numbers as arguments,
+    and return the first smaller number
+
+    Ex: smallerNubmer(8,6,7)
+    => 6
+
+    Ex: smallerNubmer(5,99,34)
+    => 5
+
+    Ex: smallerNubmer(5,99,3)
+    => 3
+
+    Ex: smallerNubmer(5,3,3)
+    => 3
+
+    */
+            function smallerNumber(num1 , num2 , num3){
+                document.write("Task (12) : <br> <br>")
+                if (num1 < num2 && num1 <num3)
+                document.write("Between " + num1 + " and " + num2 +  " and " + num3 + "<br>" +num1 + " is the smallest <br> <br>")
+                else if (num2 < num1 && num2 <num3)
+                document.write("Between " + num1 + " and " + num2 +  " and " + num3 + "<br>" +num2 + " is the smallest <br> <br>")
+                else if (num3<num1 && num3 < num2) 
+                document.write("Between " + num1 + " and " + num2 +  " and " + num3 + "<br>" +num3 + " is the smallest <br> <br>")
+
+            }
+            
+            smallerNumber(30 , 17, 24) 
+
+        /*
+    13
+    Write a function called shorterString
+    that accept five string as an arguments,
+    and return the first shorter string
+
+    Ex: shorterString("air","school","car","by","github")
+    => by
+
+    Ex: shorterString("air","tr","car","by","github")
+    => tr
+
+    Ex: shorterString("by","tr","car","air","github")
+    => by
+
+    Ex: shorterString("air","by","car","school","github")
+    => by
+
+    Ex: shorterString("air","tr","by","car","github")
+    => by
+
+    Ex: shorterString("air","tr","car","github","by")
+    => by
+
+    */
+                // Trial(1) in this trial it sorted strings based on length neglecting the alphabetically sort
+
+                    // function shorterString (word1 , word2 , word3 , word4 ,word5) {
+                    //     document.write ("Task (13) : <br> <br> " )
+                    //     let shortest = word1;
+                    //     if( shortest.length > word2.length ){
+                    //         shortest = word2;
+                    //     }
+                    //     else if ( shortest.length > word3.length ){
+                    //         shortest= word3;
+                    //     }
+                    //     else if ( shortest.length > word4.length ){
+                    //         shortest= word4;
+                    //     }
+                    //     else if ( shortest.length > word5.length ){
+                    //         shortest= word5;
+                    //     }
+                    
+                    // document.write("The shortest word between <br> "+ word1 +", "+ word2 +", "+ word3 +", "+ word4 +",  "+ word5 + "  is : " + shortest + "<br> <br>")
+                    // }
+                    // shorterString ("air","school","car","by", "github")
+                    // shorterString ("air","tr","car","by", "github")
+                    // shorterString ("by","tr","car","air", "github")
+                    // shorterString ("air","tr","by","car", "github")
+                    // shorterString("air","tr","car","github","by")
+                    // shorterString("Sunday","Monday","Tuesday","wednesday","Thursday")
+
+
+                 // Trial (2) In this trial it sorted strings based on the alphabetically sort neglecting the length 
+
+                    // function sort  (word1 , word2 , word3 , word4 ,word5) {
+                    //     let arr = [word1 , word2 , word3 , word4 ,word5]
+                    //    document.write( arr.sort())
+
+                    // }
+
+                    // sort ("air","school","car","by", "github")
+                
+                    //     /*
+
+                 // Trial (3) In this trial it sorted strings based on the length and then alphabetically
+
+                
+                // // Note to myself:
+                // //  The localeCompare() method in JavaScript is a built-in function that allows for comparing two strings 
+                // // in a locale-sensitive manner. 
+                // // This method is particularly useful for sorting strings according to the rules of a specific language or locale.
+
+    
+    
+                function sortStrings(arr) {
+               return arr.sort((a, b) => {
+                // Compare by length first
+                if (a.length !== b.length) {
+                    return a.length - b.length; // Sort by length
+                }
+                // If lengths are the same, sort alphabetically
+                return a.localeCompare(b); // Sort alphabetically
+               });
+                 }
+
+                // Array of strings to sort
+                const strings = ["air", "school", "car", "by", "github"];
+                const sortedStrings = sortStrings(strings);
+
+                // Display the original words and the sorted result
+                document.write ("Task (13) : <br> <br>")
+
+                document.write("The words are: " + strings.join(", ") + "<br>");
+                document.write("The sorted words are: " + sortedStrings.join(", ") + "<br>");
+
+                // Find and display the shortest word
+                const shortestWord = sortedStrings[0]; // After sorting, the first element is the shortest
+                document.write("The shortest word is: " + shortestWord + "<br> <br>");
+
+
+
+    // 14
+    // Write a function called longerString
+    // that accept four string as an arguments,
+    // and return the first longer string
+
+    // Ex: longerString("air","school","car","github")
+    // => school
+
+    // Ex: longerString("air","schoo","car","github")
+    // => github
+
+    // try all the cases (change the order of the longestString)
+  
+    //     function longerString (word1 , word2, word3 , word4){
+    //         document.write ("Task (14) : <br> <br> " )
+    //         let longest = word1;
+    //         if( longest.length < word2.length ){
+    //             longest = word2;
+    //         }
+    //         else if ( longest.length < word3.length ){
+    //             shortest= word3;
+    //         }
+    //         else if ( longest.length < word4.length ){
+    //             longest= word4;
+    //     }
+    //     document.write("The longest word between <br> "+ word1 +", "+ word2 +", "+ word3 +", "+ word4 + "  is : " + longest + "<br> <br>")
+
+    // }
+    // longerString("air","school","car","github")
+    // longerString("github","air","car","school")
+
+    function sortStrings(arr) {
+               return arr.sort((a, b) => {
+                // Compare by length first
+                if (a.length !== b.length) {
+                    return b.length - a.length; // Sort by length
+                }
+                // If lengths are the same, sort alphabetically
+                return a.localeCompare(b); // Sort alphabetically
+               });
+                 }
+
+                // Array of strings to sort
+                const stringsL = ["air", "school", "car", "by", "github"];
+                const sortedStringsL = sortStrings(strings);
+
+                // Display the original words and the sorted result
+                document.write ("Task (14) : <br> <br>")
+                document.write("The words are: " + strings.join(", ") + "<br>");
+                document.write("The sorted words are: " + sortedStrings.join(", ") + "<br>");
+
+                // Find and display the longest word
+                const longestword = sortedStrings[0]; // After sorting, the first element is the longest
+                document.write("The longest word is: " + longestword + "<br> <br>");
+
+
+
+    //     Write a function called isEven
+    // that accept 1 argument as a number,
+    // and return true if this number is even
+    // and false if this number is odd
+
+    // Ex: isEven(1)
+    // => false
+    // Ex: isEven(2)
+    // => true
+
+
+        function isEven (num){
+            document.write("Task (15): <br> <br> ")
+            if (num %2==0)
+            document.write("True <br> <br>")
+            else 
+            document.write ("False <br> <br>")
+
+        }
+
+        isEven (5);
+
+
+
+        /*
+    16
+    Write a function called isOdd
+    that accept 1 argument as a number,
+    and return true if this number is Odd
+    and false if this number is Even
+
+    Ex: isOdd(4)
+    => false
+    Ex: isOdd(5)
+    => true
+
+    */
+
+
+        function isOdd (num){
+            document.write("Task (16): <br> <br> ")
+            if (num %2!=0)
+            document.write("True <br> <br>")
+            else 
+            document.write ("False <br> <br>")
+        }
+        isOdd(5)
+
+
+            /*
+    17
+    Write a function called positive
+    that accept 1 argument as a number,
+    and return the positive version of the number passed
+
+    Ex: positive(4)
+    => 4
+    Ex: positive(-5)
+    => 5
+
+    */
+
+        function positive (num){
+            document.write("Task (17) : <br> <br>"  )
+           if (num >=0) {
+           abs= num;
+            document.write("The absolute number of " + "("+ num + ")"+" is : " + abs + "<br> <br>")
+            }
+           else {
+           abs = num * -1 
+           document.write("The absolute number of " + "("+ num + ")"+ " is : " + abs + "<br> <br>") 
+            }
+          
+        }
+
+        positive (-1)
+
+            
+    /*
+    18
+    Write a function called fullName
+    that accept two parameters, firstName and lastName,
+    and returns the firstName and lastName concatenated
+    together with a space in between.
+
+    Ex: fullName("Adam","McCallen")
+    => "Adam McCallen"
+    Ex: fullName("Alex", "Mercer")
+    => "Alex Mercer"
+    */  
+     
+     function fullName (firstName, lastName) {
+        document.write("Task (18) : <br> <br>")
+        document.write(firstName + " " + lastName + "<br> <br>")
+
+     }
+      
+     fullName ("Toqa", "Khashashneh")
+
+
+
+        
+    /*
+    19
+    Write a function called average
+    that takes five numbers as inputs
+    and returns the average of those numbers.
+
+    Ex: average(1,2,3,4,5)
+    => 3
+
+    Ex: average(5,7,9,3,5)
+    => 5.8
+
+    */
+
+     function average (num1 , num2 , num3 , num4, num5){
+        document.write ("Task (19) : <br> <br>")
+       let arr = [num1,num2, num3 , num4, num5]
+        let avg = (arr[0] + arr [1] + arr[2] + arr[3] + arr[4])/arr.length
+        document.write ("The average of " + num1 + ", " + num2 + ", " + num3 + ", " + num4 + ", " +num5 + " =   " + avg + "<br> <br>" )
+
+     }
+        average (5,7,9,3,5)
+
+
+
+        
+    /*
+    20
+    Write a function called randomNumber
+    that didnt takes any parameter
+    and returns a random number between 0-1
+    ** hint: you can seacrh using MDN
+
+    Ex: randomNumber()
+    => 0.2278
+
+    Ex: randomNumber()
+    => 0.475
+
+    */
+
+     function randomNumber() {
+        document.write("Task (20) : <br> <br> ")
+       let ran = Math.random()
+     document.write ("The Random Number Between (0) and (1) is :" + ran  +"<br> <br>")
+
+     }
+        randomNumber()
+
+
+    /*
+    21
+    Write a function called randomBetweenNumbers
+    that takes 2 parameters
+    and returns a random number between them
+    ** hint: you can seacrh using MDN
+
+    Ex: randomBetweenNumbers(1,8)
+    => 7.5412
+
+    Ex: randomBetweenNumbers(3,100)
+    => 23
+
+    */
+
+     function randomBetweenNumbers (min , max) {
+        document.write("Task (21) : <br> <br> ")
+        let BetweenNumbers = Math.random() * (max - min) + min;
+        document.write("The Random Number Between " + min + " and " + max + " is :" + BetweenNumbers + "<br> <br> ")
+     }
+
+     randomBetweenNumbers (1,8)
+
+    /*
+    22
+    Write a function called scoreInUniversty
+    that takes 1 parameters
+    and returns the alpabet in the unevirsty
+    A => 95-100
+    B => 85-94
+    C => 70-84
+    D=> 50-69
+    F=> 0-49
+
+    Ex: scoreInUniversty(96)
+    => "A"
+
+    Ex: scoreInUniversty(3)
+    => "F"
+
+    Ex: scoreInUniversty(71)
+    => "C"
+    */
+
+     function scoreInUniversty (score) {
+        document.write("Task (21) : <br> <br> ")
+
+        if (score >=95 && score <100) {
+            document.write ("Your Score Is A <br> <br>")
+        }
+        else if (score >=85 && score <=94) {
+            document.write ("Your Score Is B <br> <br>")
+        }
+        else if (score >=70 && score <=84) {
+            document.write ("Your Score Is C <br> <br>")
+        }
+        else if (score >=50 && score <=69) {
+            document.write ("Your Score Is D <br> <br>")
+        }
+        else if (score >=0 && score <=49) {
+            document.write ("Your Score Is F <br> <br>")
+        }
+     }
+
+     scoreInUniversty(98)
+
+    /*
+    23
+    Write a function called counter
+    that will returns a number bigger
+    than the one that returnd before
+    and start from 0
+
+    Ex: counter()
+    => 1
+
+    Ex: counter()
+    => 2
+
+    Ex: counter()
+    => 3
+
+    */
+
+
+    function counter (num) {
+        document.write("Task (23): <br> <br> ")
+        let counter = 0
+        for (i=0 ; i<num ; i++ ) {
+            counter =   i +1
+            document.write(counter + "<br> <br>")
+        }
+
+    }
+
+    counter (8)
+
+
+    /*
+    24
+    Write a function called resetCounter
+    that will reset the previuos function
+    and return the number before reset and
+    a string say that the counter reset
+
+    Ex: counter()
+    => 1
+
+    Ex: counter()
+    => 2
+
+    Ex: counter()
+    => 3
+
+    Ex: resetCounter()
+    => 3 and the counter reset now
+
+    Ex: counter()
+    => 1
+
+    Ex: counter()
+    => 2
+
+    Ex: resetCounter()
+    => 2 and the counter reset now
+
+    Ex: counter()
+    => 1
+    */
+
+
+function resetCounter (max){
+    document.write("Task (24) : <br> <br> ")
+    let counter =0;
+    for (i=0 ; i < max ; i++ ){
+    counter= i + 1; 
+    document.write (counter + "<br> ") 
+    }
+    document.write (counter + " and the counter reset now <br> ") 
+    for (i=0 ; i < max ; i++ ){
+    counter= i + 1; 
+    document.write (counter + "<br> ") 
+    }
+
+}
+
+resetCounter(3)
+</script>
+</body>
+
+</html>
