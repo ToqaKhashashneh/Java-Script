@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <head>
+    <style>
+    #formdiv{
+        border: 2px solid black;
+        width: 44vw;
+        height: fit-content;
+        padding: 2vw;
+        margin: 2vw;
+    }
+
+    #displayForm{
+        border: 2px solid black;
+        width: 44vw;
+        height: fit-content;
+        padding: 2vw;
+        margin: 2vw;
+        background-color: antiquewhite;
+    }
+
+</style> 
+</head>
+<body>
+    <div id="formdiv" onsubmit="handleSubmit(event)">
+        <form >
+                <label for ="name" >Name</label>
+                <input id = "name" type = "text"  >
+                <br> <br>
+
+                <label for ="Age" >Age</label>
+                <input id = "Age" type = "number" >
+                <br> <br>
+
+                <label for ="Gender" >Gender</label>
+                <input id = "Gender" type = "text" >
+                <br> <br>
+
+                <label for ="BirthDate" >Birth Date</label>
+                <input id = "BirthDate" type = "date" >
+                <br> <br>
+
+                <label for ="Image" >Uplod Your Image: </label>
+                <input id = "Image" type = "file" >
+                <br> <br>
+                <hr>
+                <br> 
+                <label for ="Description" >Description:</label>
+                <input id = "Description" type = "text" >
+                <br> <br>
+
+                <label for ="Major" >Major & University:</label>
+                <input id = "Major" type = "text" >
+                <br> <br>
+
+                <span> Programming Languages: </span>
+                <input type="checkbox" id="HTML" name="HTML" value="HTML">
+                <label for="HTML"> HTML</label>
+
+                <input type="checkbox" id="CSS" name="CSS" value="CSS">
+                <label for="CSS"> CSS</label>
+
+                <input type="checkbox" id="JavaScript" name="JavaScript" value="JavaScript">
+                <label for="JavaScript"> JavaScript</label><br><br>
+                <hr>
+                <br>
+                <label for ="SiblingNumber" >Sibling Number</label>
+                <input id = "SiblingNumber" type = "number" >
+                <br> <br>
+
+                <label for ="DescriptionOfSiblings" >Description Of Siblings:</label>
+                <input id = "DescriptionOfSiblings" type = "text" >
+                <br> <br>
+
+                <input type="submit" value="Submit">
+        </form>
+        
+    <button onclick="saveToLocal()">Save to Local Storage</button>
+
+    <button onclick="showLocal()">Show Local Storage</button>
+
+    </div>
+
+
+
+    <div id =displayForm>
+        
+        <p id="outputName">Name:</p>
+        <p id="outputAge">Age:</p>
+        <p id="outputGender">Gender:</p>
+        <p id="outputBirthdate">Birthdate:</p>
+        <p id="outputDescription">Description:</p>
+        <p id="outputMajor">Major & University:</p>
+        <p id="outputLanguages">Programming Languages:</p>
+        <p id="outputSiblings">Siblings:</p>
+        <p id="outputSiblingsDesc">Siblings Description:</p>
+        
+    </div>
+    <script>
+
+function handleSubmit(event) {
+    event.preventDefault();  // Prevent form from actually submitting 
+                            }
+
+        function saveToLocal() {
+    localStorage.setItem("name", document.getElementById("name").value);
+    localStorage.setItem("Age", document.getElementById("Age").value);
+    localStorage.setItem("Gender", document.getElementById("Gender").value);
+    localStorage.setItem("BirthDate", document.getElementById("BirthDate").value);
+    localStorage.setItem("Description", document.getElementById("Description").value);
+    localStorage.setItem("Major", document.getElementById("Major").value);
+    localStorage.setItem("SiblingNumber", document.getElementById("SiblingNumber").value);
+    localStorage.setItem("DescriptionOfSiblings", document.getElementById("DescriptionOfSiblings").value);
+    localStorage.setItem("ProgrammingLanguages", document.getElementById("HTML").value);
+    localStorage.setItem("ProgrammingLanguages", document.getElementById("CSS").value);
+    localStorage.setItem("ProgrammingLanguages", document.getElementById("JavaScript").value);
+
+
+
+    
+    let ProgrammingLanguages = [];
+                    if (document.getElementById("html").checked) ProgrammingLanguages.push("HTML");
+                    if (document.getElementById("css").checked) ProgrammingLanguages.push("CSS");
+                    if (document.getElementById("javascript").checked) ProgrammingLanguages.push("JavaScript");
+
+                    localStorage.setItem("ProgrammingLanguages", ProgrammingLanguages.join(" "));
+            }
+
+
+
+        function showLocal() {
+            document.getElementById("outputName").innerText = "Name: " + localStorage.getItem("name");
+            document.getElementById("outputAge").innerText = "Age: " + localStorage.getItem("Age");
+            document.getElementById("outputGender").innerText = "Gender: " + localStorage.getItem("Gender");
+            document.getElementById("outputBirthdate").innerText = "Birthdate: " + localStorage.getItem("BirthDate");
+            document.getElementById("outputDescription").innerText = "Description: " + localStorage.getItem("Description");
+            document.getElementById("outputMajor").innerText = "Major: " + localStorage.getItem("Major");
+            document.getElementById("outputLanguages").innerText = "Languages: " + localStorage.getItem("ProgrammingLanguages");
+            document.getElementById("outputSiblings").innerText = "Sibling Number: " + localStorage.getItem("SiblingNumber");
+            document.getElementById("outputSiblingsDesc").innerText = "Description Of Siblings: " + localStorage.getItem("DescriptionOfSiblings");
+        }
+    
+    </script>
+</body>
+</html>
