@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Flags</title>
+</head>
+<body>
+    <form>
+        <select id ="select" onchange="ChangeFlags();">
+        <!-- Note to myself:
+            HTML
+        1) i added the select elemnt 
+        2) i gave it an id called "select" to call it in Js 
+        3) i made an inline event which is "on change" that triggers the change on the select options
+           and i made a function called "ChangeFlags"
+        4) i gave each option a value to use it later
+        5) i added the img elemnt with an empty src which is basically for displaying the flag images and gave it an id called "img"
+            Java Script
+        6) on the Change Flags Function i called the select by it id and stored it in a const called "datalist" to work on it on Js
+           i also stored the values of the datalist which are (Jordan,Palestine and Lebanon) that i gave it to the options in step (4)
+           in a const called "country"
+        7) i called the img elemnt by it id and stored it in a const called "images" to work on it on Js
+        8) i made an object called "flags" and stored it in a const which contains (key:value) for each option
+           in this case the key was the value i gave to the option earlier and the value was the img src for each option
+        9) finally i assigned each option (img src) to the (img elemnt src in html which is for the display in the 1st place)
+            based on the selected datalist value (option value) by the key on the flags object      
+     
+            -->
+        <select id ="select" onchange="ChangeFlags();">
+            <option value="Jordan">Jordan </option>
+            <option value="Palestine">Palestine </option>
+            <option value="Lebanon">Lebanon </option>
+
+        </select>
+        </form>
+        <img src="" id="img" alt="photo">
+
+        </div>
+
+        <script>
+            
+
+function ChangeFlags() {
+    const datalist = document.getElementById("select");
+    const country = datalist.value; 
+
+    const images = document.getElementById("img");
+
+    const flags = {Jordan: "Jordan.jpg", Palestine: "Palestine.jpg", Lebanon: "Lebanon.jpg",};
+
+    images.src = flags[country];
+}
+</script> 
+
+
+
+
+
+  
+</body>
+</html>
