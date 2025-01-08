@@ -45,9 +45,13 @@
       const lnameError = document.getElementById('lnameError');
       lnameError.textContent = lname.trim() ? '' : 'Last name cannot be empty';
 
+      //  trim removes any whitespace from both ends of the string stored in lname.
+      //  This ensures that if a user enters only spaces, it will be treated as an empty string.
+
       const bdate = document.getElementById('bdate').value;
       const bdateError = document.getElementById('bdateError');
       bdateError.textContent = /^\d{2}\/\d{2}\/\d{4}$/.test(bdate) ? '' : 'The format should be dd/mm/yyyy';
+      // \/: Matches a literal forward slash (/).
 
       const email = document.getElementById('email').value;
       const emailError = document.getElementById('emailError');
